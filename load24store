@@ -79,7 +79,7 @@ class Loader():
                 self.store.append_graph(self.graph, rdf)
                 shutil.move(os.path.join(self.path,f), os.path.join(donepath,f))
         if self.verbose:
-            print "loaded %i files" %idx+1
+            print "loaded %s files" % str(idx+1)
             print "loaded files moved to %s" % donepath
 
             
