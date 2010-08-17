@@ -71,6 +71,7 @@ class Loader():
             
         if self.verbose:
             print "loading files"
+        i = 0
         for idx, f in enumerate(os.listdir(self.path)):
             if f.endswith('.ntriples') or f.endswith('.nt') or f.endswith('.rdf') or f.endswith('.ttl') or f.endswith('.n3'):
                 if self.verbose:
@@ -78,8 +79,9 @@ class Loader():
                 rdf = open(os.path.join(self.path,f),'r').read()
                 self.store.append_graph(self.graph, rdf)
                 shutil.move(os.path.join(self.path,f), os.path.join(donepath,f))
+                i+=1
         if self.verbose:
-            print "loaded %s files" % str(idx+1)
+            print "loaded %s of %s files" % (str(i+1),str(idx+1))
             print "loaded files moved to %s" % donepath
 
             
