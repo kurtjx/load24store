@@ -1,0 +1,20 @@
+This is a simple script to load a directory of RDF files into 
+a 4Store endpoint (see http://4store.org/)
+
+In addition to assuming a working 4Store install with a running
+SPARQL endpoint, this script depends on the HTTP4Store Python 
+module which can be easy installed as follows:
+
+  $ sudo easy_install HTTP4Store
+  
+For now, files loaded to the endpoint are moved into a sub directory
+called "done_rdf".  There is no support for searching a directory
+tree recursively (yet).
+
+Installing is simple:
+
+  $ sudo python setup.py install
+  
+Then usage is:
+
+  $ load24store [OPTIONS...] ENDPOINT GRAPH PATH_TO_RDF
